@@ -1,213 +1,185 @@
 .about {
-    padding: 0; /* Remove padding to allow it to take up full height */
-    height: 100vh; /* Full screen height */
-    background: linear-gradient(45deg, #0a0a1a, #1a1a2f);
-    position: relative;
-    overflow: hidden;
-  }
-  
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #0a0a1a, #1a1a2f);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  height: 100%;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image-container {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(0, 247, 255, 0.3);
+  box-shadow: 0 0 40px rgba(161, 0, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+}
+
+/* About Content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+/* Bio Card */
+.bio-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.bio-text {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    position: relative;
-    z-index: 2;
-    height: 100%; /* Ensures the container stretches to fill the full screen */
-    display: flex;
-    align-items: center; /* Vertically center content */
-  }
-  
-  .profile-section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .profile-image-container {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid rgba(0, 247, 255, 0.3);
-    box-shadow: 0 0 40px rgba(161, 0, 255, 0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(30%);
-  }
-  
-  .image-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, 
-      rgba(0, 247, 255, 0.1) 0%, 
-      transparent 70%);
-    animation: glowPulse 4s infinite;
-  }
-  
-  .about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    position: relative;
-  }
-  
-  .title-decorator {
-    color: #00f7ff;
-    margin-right: 1rem;
-  }
-  
-  .bio-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .bio-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-      transparent 25%,
-      rgba(0, 247, 255, 0.1) 50%,
-      transparent 75%);
-    animation: hologram 8s infinite linear;
-  }
-  
-  .bio-text {
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.8;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .skill-card:hover {
-    transform: translateY(-5px);
-    background: rgba(0, 247, 255, 0.05);
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
-  }
-  
-  .skill-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 5px rgba(0, 247, 255, 0.5));
-  }
-  
-  .skill-name {
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-  }
-  
-  .skill-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-      transparent 25%,
-      rgba(0, 247, 255, 0.1) 50%,
-      transparent 75%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .skill-card:hover .skill-overlay {
-    opacity: 1;
-  }
-  
-  @keyframes glowPulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.3; }
-  }
-  
-  @keyframes hologram {
-    0% { transform: rotate(0deg) translate(-25%, -25%); }
-    100% { transform: rotate(360deg) translate(-25%, -25%); }
-  }
-  
-  @media (max-width: 1024px) {
-    .about-container {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       gap: 3rem;
-    }
-  
-    .profile-image-container {
+      text-align: center;
+  }
+
+  .profile-image-container {
       width: 250px;
       height: 250px;
-    }
-  
-    .bio-text {
+  }
+
+  .bio-text {
       font-size: 1rem;
-    }
-  
-    .skills-grid {
+  }
+
+  .skills-grid {
       grid-template-columns: repeat(2, 1fr);
-    }
   }
-  
-  @media (max-width: 480px) {
-    .about {
-      padding: 4rem 1rem;
-    }
-  
-    .section-title {
+}
+
+@media (max-width: 768px) {
+  .about {
+      height: auto;
+      padding: 4rem 2rem;
+  }
+
+  .about-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .section-title {
       font-size: 2rem;
-    }
-  
-    .skill-card {
-      padding: 1rem;
-    }
-  
-    .skill-icon {
-      font-size: 1.5rem;
-    }
   }
-  
+
+  .profile-image-container {
+      width: 220px;
+      height: 220px;
+  }
+
+  .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio-text {
+      font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+      padding: 4rem 1rem;
+  }
+
+  .section-title {
+      font-size: 1.8rem;
+  }
+
+  .bio-text {
+      font-size: 0.9rem;
+  }
+
+  .profile-image-container {
+      width: 180px;
+      height: 180px;
+  }
+
+  .skills-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .skill-card {
+      padding: 1rem;
+  }
+
+  .skill-icon {
+      font-size: 1.5rem;
+  }
+}
