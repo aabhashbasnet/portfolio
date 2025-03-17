@@ -210,3 +210,25 @@
       gap: 1rem;
     }
   }
+  @media (max-width: 480px) {
+    .projects {
+      padding: 4rem 1rem;
+      padding-top: 120px; /* Increased padding-top for smaller screens */
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .project-image-container {
+      height: 220px; /* Adjust height for smaller devices */
+    }
+    
+    .project-title {
+      font-size: 1.2rem;
+    }
+    
+    .project-description {
+      font-size: 0.9rem;
+    }
+  }
